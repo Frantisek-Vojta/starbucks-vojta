@@ -3,11 +3,8 @@
 
 :root {
     --snow-color: #0aadaf;
+    --annimation-duration: 60s;
 }
-
-
-/*    ***  ČUDLÍK  ***    */
-
 
 .toggle-snow-button {
     padding: 10px 20px;
@@ -43,6 +40,7 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
 }
+
 .toggle-snow-button:hover {
     background-color: #fff;
     color: #017143;
@@ -52,7 +50,6 @@
     animation: none;
     transition: 0.5s;
 }
-
 
 @keyframes pulse {
     0% {
@@ -90,13 +87,11 @@
     }
 }
 
-
-header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
+header ul {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 
 .initial-snow {
     position: absolute;
@@ -109,7 +104,6 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     pointer-events: none;
 }
 
-/* Styl vloček */
 .initial-snow > .snow {
     font-size: 20px;
     color: var(--snow-color);
@@ -120,25 +114,35 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     pointer-events: none;
 }
 
-/* animace pro pád sněhu */
 @keyframes snowfall {
     0% {
-        transform: translate3d(var(--left-ini, 0), 0, 0); /* zacatek */
+        transform: translate3d(var(--left-ini, 0), 0, 0);
     }
     100% {
-        transform: translate3d(var(--left-end, 0), 110vh, 0); /* konec */
+        transform: translate3d(var(--left-end, 0), 1000vh, 0);
     }
 }
 
+.snow {
+    position: absolute;
+    top: -10vh;
+    animation: fall 10s linear infinite;
+}
 
-
-/* Vločky styly */
+@keyframes fall {
+    0% {
+        top: -10vh;
+    }
+    100% {
+        top: 100vh;
+    }
+}
 
 .snow:nth-child(1) {
     --left-ini: 0vw;
     --left-end: -1vw;
     left: 70vw;
-    animation-duration: 9s;
+    animation-duration: 66s;
     animation-delay: 0s;
 }
 
@@ -146,7 +150,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -7vw;
     --left-end: 10vw;
     left: 65vw;
-    animation-duration: 15s;
+    animation-duration: 74s;
     animation-delay: 2s;
 }
 
@@ -154,7 +158,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 6vw;
     --left-end: 6vw;
     left: 1vw;
-    animation-duration: 9s;
+    animation-duration: 75s;
     animation-delay: 1s;
 }
 
@@ -162,7 +166,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -3vw;
     --left-end: 8vw;
     left: 20vw;
-    animation-duration: 12s;
+    animation-duration: 62s;
     animation-delay: 3s;
 }
 
@@ -170,7 +174,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 2vw;
     --left-end: -3vw;
     left: 90vw;
-    animation-duration: 11s;
+    animation-duration: 70s;
     animation-delay: 4s;
 }
 
@@ -178,7 +182,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 4vw;
     --left-end: -4vw;
     left: 10vw;
-    animation-duration: 8s;
+    animation-duration: 52s;
     animation-delay: 1s;
 }
 
@@ -186,7 +190,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -6vw;
     --left-end: 3vw;
     left: 45vw;
-    animation-duration: 10s;
+    animation-duration: 78s;
     animation-delay: 3s;
 }
 
@@ -194,7 +198,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 7vw;
     --left-end: -5vw;
     left: 30vw;
-    animation-duration: 13s;
+    animation-duration: 73s;
     animation-delay: 2s;
 }
 
@@ -202,7 +206,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 2vw;
     --left-end: -6vw;
     left: 80vw;
-    animation-duration: 14s;
+    animation-duration: 69s;
     animation-delay: 5s;
 }
 
@@ -210,7 +214,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -4vw;
     --left-end: 5vw;
     left: 20vw;
-    animation-duration: 12s;
+    animation-duration: 71s;
     animation-delay: 6s;
 }
 
@@ -218,7 +222,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 5vw;
     --left-end: 2vw;
     left: 10vw;
-    animation-duration: 11s;
+    animation-duration: 59s;
     animation-delay: 7s;
 }
 
@@ -226,107 +230,103 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -5vw;
     --left-end: 3vw;
     left: 70vw;
-    animation-duration: 9s;
-    animation-delay: 10s;
+    animation-duration: 69s;
+    animation-delay: 49s;
 }
 
 .snow:nth-child(13) {
     --left-ini: 4vw;
     --left-end: -3vw;
     left: 50vw;
-    animation-duration: 8s;
-    animation-delay: 11s;
+    animation-duration: 73s;
+    animation-delay: 51s;
 }
 
 .snow:nth-child(14) {
     --left-ini: -3vw;
     --left-end: 6vw;
     left: 15vw;
-    animation-duration: 10s;
-    animation-delay: 9s;
+    animation-duration: 75s;
+    animation-delay: 19s;
 }
 
 .snow:nth-child(15) {
     --left-ini: 6vw;
     --left-end: -7vw;
     left: 85vw;
-    animation-duration: 13s;
-    animation-delay: 12s;
+    animation-duration: 65s;
+    animation-delay: 63s;
 }
-
-/*
-
-    VÍCE STYLŮ VLOČEK
 
 .snow:nth-child(16) {
     --left-ini: 2vw;
     --left-end: 3vw;
     left: 15vw;
-    animation-duration: 16s;
-    animation-delay: 3s;
+    animation-duration: 74s;
+    animation-delay: 59s;
 }
 
 .snow:nth-child(17) {
     --left-ini: -3vw;
     --left-end: 4vw;
     left: 60vw;
-    animation-duration: 12s;
-    animation-delay: 5s;
+    animation-duration: 70s;
+    animation-delay: 42s;
 }
 
 .snow:nth-child(18) {
     --left-ini: 5vw;
     --left-end: -5vw;
     left: 40vw;
-    animation-duration: 17s;
-    animation-delay: 7s;
+    animation-duration: 67s;
+    animation-delay: 46s;
 }
 
 .snow:nth-child(19) {
     --left-ini: -2vw;
     --left-end: 3vw;
     left: 30vw;
-    animation-duration: 14s;
-    animation-delay: 6s;
+    animation-duration: 78s;
+    animation-delay: 38s;
 }
 
 .snow:nth-child(20) {
     --left-ini: 2vw;
     --left-end: 5vw;
     left: 75vw;
-    animation-duration: 12s;
-    animation-delay: 8s;
+    animation-duration: 72s;
+    animation-delay: 32s;
 }
 
 .snow:nth-child(21) {
     --left-ini: 3vw;
     --left-end: -2vw;
     left: 90vw;
-    animation-duration: 15s;
-    animation-delay: 10s;
+    animation-duration: 63s;
+    animation-delay: 22s;
 }
 
 .snow:nth-child(22) {
     --left-ini: -4vw;
     --left-end: 2vw;
     left: 50vw;
-    animation-duration: 13s;
-    animation-delay: 4s;
+    animation-duration: 68s;
+    animation-delay: 48s;
 }
 
 .snow:nth-child(23) {
     --left-ini: 7vw;
     --left-end: -6vw;
     left: 15vw;
-    animation-duration: 18s;
-    animation-delay: 6s;
+    animation-duration: 74s;
+    animation-delay: 54s;
 }
 
 .snow:nth-child(24) {
     --left-ini: 5vw;
     --left-end: -3vw;
     left: 20vw;
-    animation-duration: 9s;
+    animation-duration: 78s;
     animation-delay: 2s;
 }
 
@@ -334,47 +334,48 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -3vw;
     --left-end: 6vw;
     left: 80vw;
-    animation-duration: 10s;
-    animation-delay: 11s;
+    animation-duration: 63s;
+    animation-delay: 32s;
 }
 
 .snow:nth-child(26) {
     --left-ini: 6vw;
     --left-end: 3vw;
     left: 55vw;
-    animation-duration: 16s;
-    animation-delay: 7s;
+    animation-duration: 68s;
+    animation-delay: 25s;
 }
 
 .snow:nth-child(27) {
     --left-ini: -5vw;
     --left-end: 5vw;
     left: 35vw;
-    animation-duration: 14s;
-    animation-delay: 13s;
+    animation-duration: 74s;
+    animation-delay: 12s;
 }
 
 .snow:nth-child(28) {
     --left-ini: 4vw;
     --left-end: -2vw;
     left: 10vw;
-    animation-duration: 12s;
-    animation-delay: 10s;
+    animation-duration: 78s;
+    animation-delay: 17s;
 }
 
 .snow:nth-child(29) {
     --left-ini: -6vw;
     --left-end: 6vw;
     left: 70vw;
-    animation-duration: 15s;
+    animation-duration: 72s;
     animation-delay: 9s;
 }
+
 
 .snow:nth-child(30) {
     --left-ini: 2vw;
     --left-end: -7vw;
     left: 50vw;
-    animation-duration: 13s;
+    animation-duration: 70s;
     animation-delay: 4s;
 }
 
@@ -382,7 +383,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 3vw;
     --left-end: 2vw;
     left: 20vw;
-    animation-duration: 17s;
+    animation-duration: 70s;
     animation-delay: 3s;
 }
 
@@ -390,7 +391,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -4vw;
     --left-end: 5vw;
     left: 15vw;
-    animation-duration: 19s;
+    animation-duration: 70s;
     animation-delay: 5s;
 }
 
@@ -398,7 +399,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 5vw;
     --left-end: -4vw;
     left: 30vw;
-    animation-duration: 12s;
+    animation-duration: 70s;
     animation-delay: 8s;
 }
 
@@ -406,7 +407,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 2vw;
     --left-end: 3vw;
     left: 60vw;
-    animation-duration: 9s;
+    animation-duration: 70s;
     animation-delay: 12s;
 }
 
@@ -414,7 +415,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 4vw;
     --left-end: -2vw;
     left: 90vw;
-    animation-duration: 14s;
+    animation-duration: 70s;
     animation-delay: 6s;
 }
 
@@ -422,15 +423,15 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 2vw;
     --left-end: 1vw;
     left: 50vw;
-    animation-duration: 13s;
+    animation-duration: 70s;
     animation-delay: 4s;
 }
-
+/*
 .snow:nth-child(37) {
     --left-ini: -3vw;
     --left-end: 3vw;
     left: 80vw;
-    animation-duration: 10s;
+    animation-duration: 70s;
     animation-delay: 8s;
 }
 
@@ -438,7 +439,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 7vw;
     --left-end: -4vw;
     left: 65vw;
-    animation-duration: 16s;
+    animation-duration: 70s;
     animation-delay: 9s;
 }
 
@@ -446,7 +447,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 6vw;
     --left-end: 3vw;
     left: 25vw;
-    animation-duration: 18s;
+    animation-duration: 70s;
     animation-delay: 3s;
 }
 
@@ -454,7 +455,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 3vw;
     --left-end: -3vw;
     left: 10vw;
-    animation-duration: 12s;
+    animation-duration: 70s;
     animation-delay: 11s;
 }
 
@@ -462,7 +463,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -5vw;
     --left-end: 4vw;
     left: 40vw;
-    animation-duration: 19s;
+    animation-duration: 70s;
     animation-delay: 7s;
 }
 
@@ -470,7 +471,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 5vw;
     --left-end: -2vw;
     left: 30vw;
-    animation-duration: 16s;
+    animation-duration: 70s;
     animation-delay: 6s;
 }
 
@@ -478,7 +479,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 3vw;
     --left-end: -4vw;
     left: 55vw;
-    animation-duration: 13s;
+    animation-duration: 70s;
     animation-delay: 10s;
 }
 
@@ -486,7 +487,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 6vw;
     --left-end: 1vw;
     left: 80vw;
-    animation-duration: 17s;
+    animation-duration: 70s;
     animation-delay: 8s;
 }
 
@@ -494,7 +495,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -2vw;
     --left-end: 2vw;
     left: 25vw;
-    animation-duration: 12s;
+    animation-duration: 70s;
     animation-delay: 12s;
 }
 
@@ -502,7 +503,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 5vw;
     --left-end: -6vw;
     left: 60vw;
-    animation-duration: 14s;
+    animation-duration: 70s;
     animation-delay: 9s;
 }
 
@@ -510,7 +511,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 3vw;
     --left-end: -3vw;
     left: 45vw;
-    animation-duration: 10s;
+    animation-duration: 70s;
     animation-delay: 6s;
 }
 
@@ -518,7 +519,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: -4vw;
     --left-end: 3vw;
     left: 50vw;
-    animation-duration: 18s;
+    animation-duration: 70s;
     animation-delay: 7s;
 }
 
@@ -526,7 +527,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 6vw;
     --left-end: -3vw;
     left: 70vw;
-    animation-duration: 14s;
+    animation-duration: 70s;
     animation-delay: 4s;
 }
 
@@ -534,7 +535,7 @@ header ul { /* aby byl stred cudliku na stejne urovni jako text v navbaru */
     --left-ini: 2vw;
     --left-end: 4vw;
     left: 90vw;
-    animation-duration: 19s;
+    animation-duration: 70s;
     animation-delay: 5s;
 }
 */

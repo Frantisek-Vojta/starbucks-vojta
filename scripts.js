@@ -4,7 +4,7 @@ function imgSlider(anything){
 }
 
 
-//fce na snih
+//fce na viditelnost snehu
 document.addEventListener('DOMContentLoaded', () => {
     const snowContainer = document.querySelector('.initial-snow');
     const toggleButton = document.querySelector('.toggle-snow-button');
