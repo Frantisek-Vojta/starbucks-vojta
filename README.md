@@ -1,3 +1,3 @@
 cwa ukol
 
-strávený čas: 16h+
+strávený čas: 13h+
